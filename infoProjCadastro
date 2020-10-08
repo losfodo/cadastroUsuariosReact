@@ -1,0 +1,16 @@
+*criação de um cadastro de usuarios usando react em duas portas...
+
+#backend     "json server para backend temporariamente.. mais pra frente ver express e banco de dados do backend
+-usando json server para criar o backend
+-npm init -y    : no terminal mesma coisa mais reponde sim para todas as peguntas ou seja cria direto,,cria o arquivo package.json q descreve projetos e scripts
+npm i --save json-server@.13.0 -E    :definindo uma dependencia depois de ter criado package.json com comando npm init -y no terminal, criando assim package lock.json:'saber exatamente o pacote instalado' e node_modules
+- arquivo db.json    :possui os cadastros de usuarios apenas
+- em package.json remove "test" e coloca "start" json-server --watch:'monitorando arquivo q acabou de criar' db.json --port 3001:'usar porta no padrão 3000 no frontend react e no backend 3001 json server com duas aplicaçoes diferentes'
+-npm start : na pasta backend mostra os cadastros na porta 3001
+
+#frontend       : usando react, axios:ajax é cliente http para fazer chamadas ajax p inserir web-service,consultar,alterar,,,, bootstrap css
+-  create-react-app frontend   :comando criar node_modules packagejson e lock.json
+-package.json nas dependencias coloca axios: bootstrap: font-awesome:biblioteca de icones,,,react-router-dom,e, react-router:navegar entre os conponentes ver cadastro e como navegar entre multiplos componentes
+-npm i: na prompt de comando vai baixar as dependencias colocadas no json como bootstrap axios font-awesom...
+-   npm start: na pasta frontend porta 3000
+- ctrl c    :para sair do server clica s de sim enter
