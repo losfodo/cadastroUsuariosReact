@@ -1,0 +1,88 @@
+:root {/*pseudoclasse representa o documento. Aplicado ao HTML com especificidade mais alta q html*/
+    --bg-dark: #1A2F3A;/*bg:backgroundcor para menu*/
+
+    --logo-height: 100px;/*altura do logo*/
+    --header-height: 100px;/*altura do header*/
+    --menu-top-height: 70px;/*menu cima altura*/
+    --aside-width: 225px;/*largura aside menu*/
+    --footer-height: 40px;
+
+    --shadow: /*shadom usar header e footer tavez outros,,shadow:adicionar efeitos de sombra em volta de um elemento. Você pode especificar mais de um efeito, os separando com virgulas*/
+        0 2px 23px 0 rgba(0, 0, 0, 0.1),
+        0 2px 49px 0 rgba(0, 0, 0, 0.06);
+}
+
+* {/*seletor universal*/
+    box-sizing: border-box;/*que indica que o tamanho agora levará em conta até a borda -- ou seja, o width será a soma do conteúdo com a borda e o padding,,o proprio bootstrap faz isso mas deixa referenciado é bom*/
+    font-family: 'Montserrat', sans-serif;/*fonte da letra colocada no index.html pasta public*/
+}
+
+/* Layout em Grid */
+
+.app {/*app: div q envolve toda a aplicação*/
+    margin: 0px;
+    display: grid;/*grid.. display grid o msm q flex mas aumentou um pouco as divs*/
+    grid-template-columns: var(--aside-width) 1fr;/*duas colunas uma com aside na linha 7 do codigo app.css e 1frame*/
+    grid-template-rows:/*rows: linhas*/
+        var(--header-height)/*altura header linha 5*/
+        1fr/*dps 1fr q é conteudo inteiro da aplicação ou resto q sobrou */
+        var(--footer-height);/*footer linha 8 do codigo*/
+    grid-template-areas:/*definição do q vai ficar em cada area abaixo..*/
+        "logo header"/*linha1,1 e 2 coluna*/
+        "menu content" /*linha2 ,content= conteudo*/
+        "menu footer";
+    height: 100vh;/*altura inteira do viewport da tela */
+    background-color: #F5F5F5;
+}
+
+aside.logo {/*logo lateral esquerda*/
+    grid-area: logo;/*sera usado os grid-area para mostrar como sera separado cada um em grid..*/
+}
+
+header.header {
+    grid-area: header;
+}
+
+aside.menu-area {
+    grid-area: menu;
+}
+
+main.content {/*main.jsx.css e content==conteudo*/
+    grid-area: content;
+}
+
+footer.footer {
+    grid-area: footer;
+}
+
+@media(max-width: 768px) {/*media gera uma condição largura maxima 768px se..*/
+    .app {
+        grid-template-rows:/*o que vai nas em cada linha coluna abaixo.. */
+            var(--header-height)/*primeiro cabeçalho na altura das linhas*/
+            var(--menu-top-height)/*editado linha 6 app.css*/
+            1fr/*1frame p parte do meio ser maior*/
+            var(--footer-height);
+        grid-template-columns: var(--aside-width) 1fr;/*meio do menu aside, resto frame direito da tela o que sobrar*/
+        grid-template-areas:/*areas do grid abaixo:*/
+            "logo header"
+            "menu menu"
+            "content content"/*conteudo*/
+            "footer footer";
+    }
+}
+
+@media(max-width: 576px) {/*para 576px tela celular tablet*/
+    .app {
+        grid-template-rows:
+            var(--logo-height)/*altura do logo linha4*/
+            var(--menu-top-height)
+            1fr/*parte conteudo*/
+            var(--footer-height);
+        grid-template-columns: 1fr;/*caso celular 1fr*/
+        grid-template-areas:
+            "logo"
+            "menu"
+            "content"
+            "footer";
+    }
+}
