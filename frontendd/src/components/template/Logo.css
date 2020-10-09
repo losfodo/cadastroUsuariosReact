@@ -1,0 +1,17 @@
+aside.logo {/*conecta com aside e logo*/
+    background-color: var(--bg-dark);
+    display: flex;/*vira flex container, ficam alinhados em linha os containers ou bordas*/
+    justify-content: center;/*centralizar pelo q foi ordenado no app.css*/
+    align-items: center;/*centralizando logo pelo lado esquerdo*/
+}
+
+aside.logo img {/*propria imagem logo*/
+    padding: 0px 15px;
+    width: 100%;/*ocupando 100% da area ajustando a foto msm sendo grande demais ou pequena*/
+}
+
+@media(max-width: 576px) {/*chegando a 576px*/
+    aside.logo img {
+        width: 350px;/*largura do logo diminui para 350px*/
+    }
+}

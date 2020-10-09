@@ -1,0 +1,11 @@
+header.header {
+    background-color: #FFF;
+    padding: 0px 15px;/*espaçamento da area do logo e casinha */
+    overflow: hidden;/*oculta a escrita no html que estrapolou o elemento do tamanho da borda*/
+    white-space: nowrap;/*para o overflow nao ficar estranho com espaços em branco desnecessarios*/
+    box-shadow: var(--shadow);/*sombreamento dando destaque 3D*/
+}
+
+header.header h1 {
+    font-size: 1.8em;/*tamanho da letra cabeçario*/
+}

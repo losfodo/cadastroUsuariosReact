@@ -1,0 +1,38 @@
+aside.menu-area {/*fundo geral*/
+    background-color: var(--bg-dark);/*fundo inteiro nav e logo dark*/
+    box-shadow: 
+        2px 0 10px 0 rgba(0, 0, 0, 0.12),
+        2px 0 15px 0 rgba(0, 0, 0, 0.09);/*padrão sombreamento leve*/
+}
+
+.menu a {/*dentro de link*/
+    display: block;/*cada link em sua propria linha um em baixo do outro*/
+    text-decoration: none;/*tira o sublinhado do link*/
+    color: #FFF;/*cor das letras*/
+    font-weight: 300;/*peso da fonte deixa mais fino a letra*/
+    padding: 15px;/*espaçamento entre inicio e usuarios*/
+}
+
+.menu a:hover {/*passando mouse em cima muda gradiente ou fundo background..*/
+    background: linear-gradient(135deg, #07a7e3 0%, #32dac3 100%);/*passando mouse cor azul marinho com azul claro */
+}
+
+@media(max-width: 768px) {/*breakpoint 768px tela diminuida como tablet celular */
+    .menu {
+        display: flex;
+        justify-content: flex-start;/*start a esquerda do site end a direita*/
+        align-items: center;/*alinha centro do container feito pela grid*/
+    }
+
+    .menu a {
+        display: inline;/*manter menu inicio e usuario em uma linha*/
+        padding: 10px;
+        margin: 0px;
+    }
+
+    .menu {
+        height: 100%;
+        justify-content: space-around;/*deixa menu com espaçamento entre si inicio e usuario e container*/
+    }
+}
+/*© 2020 GitHub, Inc.*/

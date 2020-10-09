@@ -1,0 +1,8 @@
+footer.footer {/*tag footer marcada class footer*/
+    display: flex;/*footer flex..*/
+    align-items: center;
+    justify-content: flex-end;/*final da pagina fixar,,Os itens são posicionados no final do contêiner*/
+    padding: 0 25px;/*para não ficar grudado na lateral direita da pagina*/
+    background-color: #FFF;/*fundo da letra*/
+    box-shadow: var(--shadow);/*sombra mesmo header app.css*/
+}
